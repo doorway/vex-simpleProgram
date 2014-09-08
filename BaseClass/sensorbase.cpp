@@ -19,6 +19,7 @@ public:
 	bool checkAnalogPort(int port);
 	bool checkDigitalPort(int port);
 	bool checkI2CPort(int port);
+	bool checkUARTPort(int port);
 };
 SensorBase::SensorBase()
 {
@@ -60,6 +61,17 @@ bool SensorBase::checkDigitalPort(int port)
 bool SensorBase::checkI2CPort(int port)
 {
 	if(port >= 1 && port <= 8 )
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+}
+bool SensorBase::checkUARTPort(int port)
+{
+	if(port >= 1 && port <= 2 )
 		{
 			return true;
 		}
